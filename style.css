@@ -1,0 +1,245 @@
+/* --- Variables de Diseño y Paleta de Colores --- */
+:root {
+    --bg-dark: #1c3a80;
+    --bg-card: #28497e;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --primary: #6366f1; /* Indigo */
+    --secondary: #06b6d4; /* Neón cyan */
+    --accent: #10b981; /* Verde esmeralda */
+    --font-stack: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* --- Reseteo General --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: var(--font-stack);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* --- Navegación --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 10%;
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(12px);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: var(--secondary);
+}
+
+nav a {
+    color: var(--text-main);
+    text-decoration: none;
+    margin-left: 2rem;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--secondary);
+}
+
+.btn-nav {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    padding: 0.6rem 1.2rem;
+    border-radius: 50px;
+}
+
+/* --- Sección Hero --- */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 10%;
+    background: radial-gradient(circle at top right, rgba(99, 102, 241, 0.15), transparent),
+                radial-gradient(circle at bottom left, rgba(6, 118, 212, 0.1), transparent);
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    font-weight: 800;
+}
+
+.text-gradient {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto 2.5rem auto;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+/* --- Botones --- */
+.btn-primary, .btn-secondary {
+    padding: 0.8rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: var(--text-main);
+    box-shadow: 0 4px 20px rgba(99, 102, 241, 0.4);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(99, 102, 241, 0.6);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--text-main);
+    border: 2px solid var(--bg-card);
+}
+
+.btn-secondary:hover {
+    background: var(--bg-card);
+    transform: translateY(-3px);
+}
+
+/* --- Sección Servicios --- */
+.services {
+    padding: 8rem 10%;
+    text-align: center;
+}
+
+.services h2 {
+    font-size: 2.5rem;
+    margin-bottom: 4rem;
+}
+
+.grid-services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+}
+
+.card {
+    background-color: var(--bg-card);
+    padding: 3rem 2rem;
+    border-radius: 16px;
+    transition: transform 0.3s, border-color 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    text-align: left;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary);
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1.5rem;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: #0b0f19;
+    padding: 4rem 10%;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.motivation-phrase {
+    font-style: italic;
+    font-size: 1.2rem;
+    color: var(--text-main);
+    max-width: 600px;
+    margin: 0 auto 1.5rem auto;
+    font-weight: 300;
+}
+
+.copyright {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+/* --- Botón Flotante de WhatsApp --- */
+.whatsapp-float {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366;
+    color: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    z-index: 1000;
+    transition: transform 0.3s, background-color 0.3s;
+    text-decoration: none;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    background-color: #20ba5a;
+}
+
+/* --- Adaptabilidad Móvil --- */
+@media (max-width: 768px) {
+    .navbar { padding: 1rem 5%; }
+    nav a { display: none; } /* Oculta enlaces extra en móvil por simplicidad sin JS */
+    .btn-nav { display: inline-block; }
+    .hero-content h1 { font-size: 2.2rem; }
+    .hero-buttons { flex-direction: column; }
+    .whatsapp-float { bottom: 20px; right: 20px; width: 50px; height: 50px; font-size: 24px; }
+}
